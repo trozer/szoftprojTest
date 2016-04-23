@@ -94,8 +94,9 @@ public class Common {
 	            	}
 	            } else if ("console".startsWith(command)) {
 	            	game = new Game();
-	            	System.out.println("parancsok listázásához írd be ezt: list");
+	            	
 	            	while(true){
+	            		System.out.println("parancsok listázásához írd be ezt: list");
 	            		System.out.print(">");
 	    	            inputLine = instream.readLine();
 	            		
