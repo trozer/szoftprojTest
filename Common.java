@@ -97,6 +97,7 @@ public class Common {
 	            	
 	            	while(true){
 	            		System.out.println("parancsok listázásához írd be ezt: list");
+	            		System.out.println("játék parancs kiadásához írd be ezt: start");
 	            		System.out.print(">");
 	    	            inputLine = instream.readLine();
 	            		
@@ -109,6 +110,7 @@ public class Common {
 	    	            	System.out.println("satöbbi");
 	    	            }else{
 	    	            	game.console();
+	    	            	System.out.println("Hibás parancs miatt vagy egyéb okból kiléptél (starttal kezdd újra)");
 	    	            }
 	            	}
 	            } else {
@@ -175,13 +177,20 @@ public class Common {
         	boolean equals = true;
         	String[] expectedOutputTextArray = expectedOutputText.split("\n");
         	System.out.println("\n");
+        	System.out.println("az elvárt kimenet: \n");
             for(String str : expectedOutputTextArray){
             	System.out.println(str);
             }
             for(int i = 0; i < expectedOutputTextArray.length;i++){
+            	//enterek, tabulátorok kiszûrése
+            	if(expectedOutputTextArray[i].length() <= 1)
+            		break;
             	if(i < outputTextArray.length){
-            		if(!outputTextArray[i].equals(expectedOutputTextArray[i]))
+            		if(!outputTextArray[i].equals(expectedOutputTextArray[i] + "\r")){
+            			System.out.println(outputTextArray[i]);
+            			System.out.println(expectedOutputTextArray[i]);
             			equals = false;
+            		}
             	}else 
             		equals = false;
             }

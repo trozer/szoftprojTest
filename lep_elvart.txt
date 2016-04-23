@@ -1,7 +1,8 @@
-út: (0,0) pozíció, 1 darab tárolt egység
-	Player: mozgás cselekvést akar végrehajtani, kelet irányba néz, 15 tömegû, nincs nála doboz, 0 db begyûjtött ZPM van nála, él
-út: (0,1) pozíció, 0 darab tárolt egység
+út:  (0,0) pozíció, 1 darab tárolt egység
+	O'neill: mozgás cselekvést akar végrehajtani, kelet irányba néz, 15 tömegü, nincs nála doboz, 0 db begyüjtött ZPM van nála, él
+út:  (1,0) pozíció, 0 darab tárolt egység
 
-út: (0,0) pozíció, 0 darab tárolt egység
-út: (0,1) pozíció, 1 darab tárolt egység
-	Player: semmi cselekvést akar végrehajtani, kelet irányba néz, 15 tömegû, nincs nála doboz, 0 db begyûjtött ZPM van nála, él
+
+út:  (0,0) pozíció, 0 darab tárolt egység
+út:  (1,0) pozíció, 1 darab tárolt egység
+	O'neill: semmi cselekvést akar végrehajtani, kelet irányba néz, 15 tömegü, nincs nála doboz, 0 db begyüjtött ZPM van nála, él
