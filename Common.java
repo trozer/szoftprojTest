@@ -169,9 +169,6 @@ public class Common {
         System.out.println(outputText);
 
         String[] outputTextArray = outputText.split("\n");
-        for(String str : outputTextArray){
-        	System.out.println(str);
-        }
         
         if(expectedOutputText != null){
         	boolean equals = true;
