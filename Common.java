@@ -96,15 +96,16 @@ public class Common {
 							System.out.println("47: Dobozt vesz fel mérlegrõl (1 doboz van rajta)");
 							System.out.println("48: Dobozt vesz fel mérlegrõl (3 doboz van rajta)");
 							System.out.println("49: Dobozt vesz fel mérlegrõl (4 doboz van rajta)");
-							System.out.println("50: Replikátor lép (abyss)");
-							System.out.println("51: Replikátor lép (zárt kapu)");
-							System.out.println("52: Replikátor lép (mûködõ portál)");
-							System.out.println("53: Replikátor lép (üres út)");
+							System.out.println("50: Replikátor lép (fal)");
+							System.out.println("51: Replikátor lép (scale, van hozzákapcsolt kapu)");
+							System.out.println("52: Replikátor lép (lövedékkel találkozik)");
+							System.out.println("53: Replikátor lép (O'Neill-el elzárt út)");
 							System.out.println("54: Replikátor lép (dobozzal elzárt út)");
-							System.out.println("55: Replikátor lép (O'Neill-el elzárt út)");
-							System.out.println("56: Replikátor lép (lövedékkel találkozik)");
-							System.out.println("57: Replikátor lép (scale, van hozzákapcsolt kapu)");
-							System.out.println("58: Replikátor lép (fal)");
+							System.out.println("55: Replikátor lép (üres út)");
+							System.out.println("56: Replikátor lép (mûködõ portál)");
+							System.out.println("57: Replikátor lép (zárt kapu)");
+							System.out.println("58: Replikátor lép (abyss)");
+							System.out.println("59: O'Neill és Jaffa egymás mellett állnak és lépnek mindketten");
 						} else {
 							try {
 								int testCase = Integer.parseInt(command);
@@ -175,10 +176,57 @@ public class Common {
 									case 14:
 										commandFile = new File("fordul_r.txt");
 										expectedFile = new File("fordul_r_elvart.txt");
+									case 25:
+										commandFile = new File("loves_oneil.txt");
+										expectedFile = new File("loves_oneil_elvart.txt");
 										break;
 									case 15:
 										commandFile = new File("lep_sr.txt");
 										expectedFile = new File("lep_sr_elvart.txt");
+										break;
+									case 39:
+										commandFile = new File("drop_rs2.txt");
+										expectedFile = new File("drop_rs2_elvart.txt");
+										break;
+									case 40:
+										commandFile = new File("drop_rs3.txt");
+										expectedFile = new File("drop_rs3_elvart.txt");
+										break;	
+									case 41:
+										commandFile = new File("drop_ra.txt");
+										expectedFile = new File("drop_ra_elvart.txt");
+										break;	
+									case 42:
+										commandFile = new File("drop_rw.txt");
+										expectedFile = new File("drop_rw_elvart.txt");
+										break;	
+									case 43:
+										commandFile = new File("drop_rpo.txt");
+										expectedFile = new File("drop_rpo_elvart.txt");
+										break;	
+									case 44:
+										commandFile = new File("grab_rg.txt");
+										expectedFile = new File("grab_rg_elvart.txt");
+										break;
+									case 45:
+										commandFile = new File("grab_rgb.txt");
+										expectedFile = new File("grab_rgb_elvart.txt");
+										break;
+									case 46:
+										commandFile = new File("grab_rs.txt");
+										expectedFile = new File("grab_rs_elvart.txt");
+										break;
+									case 47:
+										commandFile = new File("grab_rs2.txt");
+										expectedFile = new File("grab_rs2_elvart.txt");
+										break;
+									case 48:
+										commandFile = new File("grab_rs3.txt");
+										expectedFile = new File("grab_rs3_elvart.txt");
+										break;
+									case 49:
+										commandFile = new File("grab_rs4.txt");
+										expectedFile = new File("grab_rs4_elvart.txt");
 										break;
 									default:
 										System.out.println("Nincs ilyen teszteset!");
@@ -221,8 +269,33 @@ public class Common {
 						else
 						// TODO ,ezt lécci valaki szedje majd össze
 						if ("list".startsWith(inputLine)) {
-							System.out.println("update: frissíti a játék állapotát.");
-							System.out.println("satöbbi");
+							System.out.println("newGame : új játék kezdése az alapértelmezett pályán");
+							System.out.println("newGame pálya.xml : új játék kezdése pálya.xml pályán");
+							System.out.println("update : frissíti a játék állapotát");
+							System.out.println("update pause|resume : automatikus frissítés ki-be (egyenlõre nincs használatban)");
+							System.out.println("loadGame : játék betöltése (egyenlõre nincs használatban)");
+							System.out.println("saveGame : játék mentése  (egyenlõre nincs használatban)");
+							System.out.println("exitGame : kilépés a játékból mentés nélkül");
+							System.out.println("move oneill|jaffa|replicator : O'neill vagy Jaffa vagy Replikátor karaktere lép egyet");
+							System.out.println("turn oneill|jaffa|replicator north|west|east|south : egység fordul adott irányba");
+							System.out.println("grab oneill|jaffa : egység megpróbál felvenni valamit az elõtte lévõ mezõrõl");
+							System.out.println("drop oneill|jaffa : egység megpróbál lerakni valamit az elõtte lévõ mezõre");
+							System.out.println("shoot oneill|jaffa blue|yellow|red|green : egység lõ adott színû lövedéket");
+							System.out.println("getUnit oneill|jaffa|replicator : adott egység teljes állapotának kiírása");
+							System.out.println("getZPM oneill|jaffa : adott egységnél lévõ ZPM kiírása");
+							System.out.println("getField x y : (x,y) koordinátákon lévõ mezõ állapotának kiírása");
+							System.out.println("getPortal : portal objektum állapotának kiírása");
+							System.out.println("listBoxes : összes doboz kiírása");
+							System.out.println("listZPMs : összes ZPM kiírása");
+							System.out.println("setReplicatorDir north|west|east|south : replikátor statikus irányának megadása");
+							System.out.println("setUnitPos oneill|jaffa|replicator x y : adott egység áthelyezése (x,y) koordinátájú mezõre");
+							System.out.println("setUnitPos ox oy tx ty : (ox,oy) koordinátán lévõ összes egység áthelyezése (x,y) koordinátájú mezõre");
+							System.out.println("killUnit oneill|jaffa|replicator : adott egység elpusztítása");
+							System.out.println("killUnit x y : (x,y) koordinátán lévõ összes egység elpusztítása");
+							System.out.println("addBox : új doboz lerakása random üres útra");
+							System.out.println("addZPM : új ZPM lerakása random üres útra");
+							System.out.println("addReplicator : új replikátor lerakása random üres útra");
+							System.out.println("talkativeStage on|off : az állapot kiírás ki-be kapcsolása (alapból bekapcsolva)");
 						} else {
 							game.console();
 							System.out.println("Hibás parancs miatt vagy egyéb okból kiléptél (starttal kezdd újra)");
