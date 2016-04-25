@@ -61,7 +61,6 @@ public class Common {
 							System.out.println("13: Játékos karakter üres és nyitott kapuból lép ki dobozzal elzárt útra");
 							System.out.println("14: Játékos fordul egy úton");
 							System.out.println("15: Játékos karakter scale-rõl lép le, üres útra");
-							/***************************** megvalósítsásra vár************************/
 							System.out.println("16: A játékos karakter dobozt rak egy üres mezõre");
 							System.out.println("17: A játékos karakter dobozt rak egy már dobozt tartalmazó mezõre");
 							System.out.println("18: A játékos karakter dobozt rak egy üres, nyitott kapura");
@@ -113,7 +112,10 @@ public class Common {
 								int lastCase = testCase + 1;
 								if (lastCaseStr != null)
 									lastCase = Integer.parseInt(lastCaseStr) + 1;
+								int success = 0;
+								int all = 0;
 								for (int i = testCase; i < lastCase; i++) {
+									all++;
 									game = new Game();
 									List<String> commands = new ArrayList<String>();
 									List<String> expected = new ArrayList<String>();
@@ -176,13 +178,97 @@ public class Common {
 									case 14:
 										commandFile = new File("fordul_r.txt");
 										expectedFile = new File("fordul_r_elvart.txt");
-									case 25:
-										commandFile = new File("loves_oneil.txt");
-										expectedFile = new File("loves_oneil_elvart.txt");
-										break;
 									case 15:
 										commandFile = new File("lep_sr.txt");
 										expectedFile = new File("lep_sr_elvart.txt");
+										break;
+									case 16:
+										commandFile = new File("drop_rr.txt");
+										expectedFile = new File("drop_rr_elvart.txt");
+										break;
+									case 17:
+										commandFile = new File("drop_rrb.txt");
+										expectedFile = new File("drop_rrb_elvart.txt");
+										break;
+									case 18:
+										commandFile = new File("drop_rg.txt");
+										expectedFile = new File("drop_rg_elvart.txt");
+										break;
+									case 19:
+										commandFile = new File("drop_rgb.txt");
+										expectedFile = new File("drop_rgb_elvart.txt");
+										break;
+									case 20:
+										commandFile = new File("drop_rgc.txt");
+										expectedFile = new File("drop_rgc_elvart.txt");
+										break;
+									case 21:
+										commandFile = new File("dobozfel.txt");
+										expectedFile = new File("dobozfel_elvart.txt");
+										break;
+									case 22:
+										commandFile = new File("dobozfel_abbys.txt");
+										expectedFile = new File("dobozfel_abbys_elvart.txt");
+										break;
+									case 23:
+										commandFile = new File("dobozfel_kapu.txt");
+										expectedFile = new File("dobozfel_kapu_elvart.txt");
+										break;
+									case 24:
+										commandFile = new File("dobozfel_portal.txt");
+										expectedFile = new File("dobozfel_portal_elvart.txt");
+										break;
+									case 25:
+										commandFile = new File("loves_oneill.txt");
+										expectedFile = new File("loves_oneill_elvart.txt");
+										break;
+									case 26:
+										commandFile = new File("loves_jaffa.txt");
+										expectedFile = new File("loves_jaffa_elvart.txt");
+										break;
+									case 27:
+										commandFile = new File("loves_falba.txt");
+										expectedFile = new File("loves_falba_elvart.txt");
+										break;
+									case 28:
+										commandFile = new File("loves_pfalba.txt");
+										expectedFile = new File("loves_pfalba_elvart.txt");
+										break;
+									case 29:
+										commandFile = new File("loves_pfalba2.txt");
+										expectedFile = new File("loves_pfalba2_elvart.txt");
+										break;
+									case 31:
+										commandFile = new File("bullet_uton.txt");
+										expectedFile = new File("bullet_uton_elvart.txt");
+										break;
+									case 32:
+										commandFile = new File("bullet_uton.txt");
+										expectedFile = new File("bullet_uton_elvart.txt");
+										break;
+									case 33:
+										commandFile = new File("bullet_abyss.txt");
+										expectedFile = new File("bullet_abyss_elvart.txt");
+										break;
+									case 34:
+								          commandFile = new File("bullet_ajto.txt");
+								          expectedFile = new File("bullet_ajto_elvart.txt");
+								          break;
+									case 35:
+										commandFile = new File("player_zpm_move.txt");
+										expectedFile = new File("player_zpm_move_elvart.txt");
+										break;
+									case 36:
+										commandFile = new File("player_zpm_grab.txt");
+										expectedFile = new File("player_zpm_grab_elvart.txt");
+										break;
+									case 37:
+										commandFile = new File("drop_rs0.txt");
+										expectedFile = new File("drop_rs0_elvart.txt");
+										break;
+									case 38:
+										commandFile = new File("drop_rs1.txt");
+										expectedFile = new File("drop_rs1_elvart.txt");
 										break;
 									case 39:
 										commandFile = new File("drop_rs2.txt");
@@ -228,6 +314,46 @@ public class Common {
 										commandFile = new File("grab_rs4.txt");
 										expectedFile = new File("grab_rs4_elvart.txt");
 										break;
+									case 50:
+										commandFile = new File("replicator_lep_rw.txt");
+										expectedFile = new File("replicator_lep_rw_elvart.txt");
+										break;
+									case 51:
+										commandFile = new File("replicator_lep_rsrg.txt");
+										expectedFile = new File("replicator_lep_rsrg_elvart.txt");
+										break;
+									case 52:
+										commandFile = new File("replicator_lep_rrrbu.txt");
+										expectedFile = new File("replicator_lep_rrrbu_elvart.txt");
+										break;
+									case 53:
+										commandFile = new File("replicator_lep_rro.txt");
+										expectedFile = new File("replicator_lep_rro_elvart.txt");
+										break;
+									case 54:
+										commandFile = new File("replicator_lep_rrb.txt");
+										expectedFile = new File("replicator_lep_rrb_elvart.txt");
+										break;
+									case 55:
+										commandFile = new File("replicator_lep_rr.txt");
+										expectedFile = new File("replicator_lep_rr_elvart.txt");
+										break;
+									case 56:
+										commandFile = new File("replicator_lep_rpp.txt");
+										expectedFile = new File("replicator_lep_rpp_elvart.txt");
+										break;
+									case 57:
+										commandFile = new File("replicator_lep_rg.txt");
+										expectedFile = new File("replicator_lep_rg_elvart.txt");
+										break;
+									case 58:
+										commandFile = new File("replicator_lep_ra.txt");
+										expectedFile = new File("replicator_lep_ra_elvart.txt");
+										break;
+									case 59:
+										commandFile = new File("units.txt");
+										expectedFile = new File("units_elvart.txt");
+										break;
 									default:
 										System.out.println("Nincs ilyen teszteset!");
 										continue;
@@ -247,7 +373,9 @@ public class Common {
 										expectedText.append(expect + "\n");
 									}
 									System.out.println(inputText.toString());
-									runCommand(inputText.toString(), expectedText.toString(), game);
+									if(runCommand(inputText.toString(), expectedText.toString(), game))
+										success++;
+									System.out.println("\n tesztek száma: " + all + " ebbõl ennyi volt sikeres: " + success );
 								}
 							} catch (Exception ex) {
 								ex.printStackTrace();
@@ -340,7 +468,7 @@ public class Common {
 		return null;
 	}
 
-	static void runCommand(String inputText, String expectedOutputText, Game game) throws Exception {
+	static boolean runCommand(String inputText, String expectedOutputText, Game game) throws Exception {
 
 		ByteArrayInputStream bais = new ByteArrayInputStream(inputText.getBytes());
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -384,11 +512,17 @@ public class Common {
 				} else
 					equals = false;
 			}
-			if (equals)
+			if (equals){
 				System.out.println("\n A teszt sikeres");
-			else
+				return true;
+			}
+			else{
 				System.out.println("\n A teszt sikertelen");
+				return false;
+			}
+			
 		}
+		return false;
 
 	}
 
